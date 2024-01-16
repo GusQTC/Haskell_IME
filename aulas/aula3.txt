@@ -1,0 +1,27 @@
+currying = esperar outro parametros
+
+higher order function = funcao que recebe funcao como parametro
+
+funcaoAplica :: a -> (a -> a) -> a
+funcaoAplica x f = f x
+
+
+lambda = (\x -> x + 1) 1
+
+
+fold = acumular / dobrar lista a um valores 
+
+
+foldl (+) 0 [1,2,3,4,5] = 15
+
+t = lista \
+
+edelcio introducao a logica classica e pensamento algebrico
+
+sci filo
+
+catamorfismo = uma dimensao ou mais e reduz a um unico valor
+
+homomorfismo 
+
+isomorfismo

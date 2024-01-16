@@ -1,0 +1,74 @@
+
+
+
+teoria das categorias
+
+
+def = uma categoria C consiste em uma 
+
+colecao de objetos = ob(C)
+
+morfismos = conjunto de morfismos (funcao expressao et) entre dois objetos = hom(A,B) ou C(A,B)
+
+Composicao 
+
+* : Hom(B,C) X Hom(A,B) -> Hom(A,C)
+        g     f           g . f
+
+satisfazendo:
+    Identidade: cada X objeto de C,  existe uma funcao identidade de X com saida X, idx = Hom (x,x)
+    Neutralidade: dado f: hom (a,b), idb . f = f = f . ida
+    Associatividade: f: Hom(a,b)
+                     g: Hom(b,c)
+                     h: Hom(c,d)
+                     h . (g . f) = (h . g) . f = Hom(a,d)
+                     
+ob(ex) = {0,1,2}
+
+hom(0,0) = {id0} = 0 >= 0
+hom(0,1) = {f} = 0 >= 1
+hom(0,2) = {g} = 0 >= 2
+hom(1,0) = {} 
+hom(1,1) = {id1} = 1 >= 1
+hom(1,2) = {h} = 1 >= 2
+hom(2,0) = {}
+hom(2,1) = {}
+hom(2,2) = {id2} = 2 >= 2
+
+Hom(a,b) X hom(b,c) = hom(a,c)
+B <= c @ A <= B === A <= C
+
+composicao = transitividade
+
+
+functor = relacao entre morfismos de duas categorias
+
+Categoria Set = "HASK"
+
+ob(Set) = {todos os conjuntos} === os tipos
+
+Hom(a,b) = A -> B = funcoes de dominio A e imagem B == as funcoes
+
+nao existe comjunto de todos os conjuntos
+
+
+Functor mapeamento de categorias
+
+
+F: C -> D com C e D categorias consistem em:
+        1. Dado f: hom(a,b) em C, existe F(f): hom(F(a),F(b)) em D
+        2, Dado A objeto de C, existe F(A) objeto de D:
+                satisfazendo:
+                        1. F(ida) = idF(a)
+                        2. F(g . f) = F(g) . F(f)
+covariante mantem a ordem da funcao
+contravariante inverte a ordem da funcao
+
+
+class functor f where
+        fmap :: (a -> b) -> f a -> f b
+
+
+        listas, maybe e IO sao functores
+
+<$> equals tag dolar fmap

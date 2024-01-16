@@ -1,0 +1,25 @@
+Aula II
+
+Pattern matching
+
+
+
+ordem x `mod` 2
+
+pre-ordem 
+
+pos ordem mod x 2
+
+
+Teste de mesa funcional = equational reasoning
+
+
+currying = funcao em memoria, funcao que retorna funcao
+
+pattern matching igual a switch case 
+
+deriving (Show, Eq)
+numerpar :: Int -> Bool
+numerpar x
+    | x `mod` 2 == 0 = True
+    | otherwise = False

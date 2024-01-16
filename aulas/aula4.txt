@@ -1,0 +1,26 @@
+module Rec where
+
+
+
+teoria dos conjuntos é logica clássica
+
+teoria dos tipos é lógica intuicionsita - matemática construtivista
+
+teoria dos tipos não tem intersecção
+
+
+elemento neutro (impossibilitar a recursao infinita)
+
+tipos eliminam erros de execução, em tempo de compilacao
+
+
+data Bolsa a = Bolsa a a deriving Show
+-- CAMPOS POLIMORFICOS 
+
+
+TIPO MONOMORFICO *
+TIPO POLIMORFICO A ou :: * -> *
+
+
+valores tem tipos e tipos tem tipos
+

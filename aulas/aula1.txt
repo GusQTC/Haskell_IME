@@ -1,0 +1,55 @@
+:t verify type
+
+
+menor fragmento de dado é função
+
+:t 1
+1 :: Num a => a
+1 e funcao que retorna a
+a polimorfismo parametrico
+
+
+:t True
+True :: Bool
+haskell n tem capacidade de retornar um tipo
+
+
+valores são funções que retornam seus tipos
+
+algebra de tipos ou teorias de tipos
+
+operadores sao funcoes
+:t (+)
+(+) :: Num a => a -> a -> a -> a
+
+Num a => significa type class, funcoes restritivas, agrupam tipos
+dois parametros  ( a,a) - um só mas com pattern matching - e um retorno a 
+qualquer a que esteja restrito a Num
+
+
+arquitetura de van noyman
+
+
+calculus lambda: em vez de uma maquina executar e mudar o estado dela decompoem, com funcoes lambda, sem variaveis globais
+
+tipos de dados algebricos são o equivalente de dados em haskell
+
+
+polimorfismo paramétrico
+muitas formas, qualquer tipo de dado pode entrar na funcao
+list<boolean> boleanos = new ArrayList<>().
+boleanos.add(10); erro de compilacao
+
+let xs = [1..10]
+xs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+tail xs, head xs
+
+[ x | x <- [1..5], x > 10 ]
+
+$ is parenthesis
+
+implementar funçao que pega numero decimal e converte em binario
+
+tipo soma tipo 1, tipo zero
+
+
