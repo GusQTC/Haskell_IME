@@ -7,8 +7,7 @@ natToInt Z = 0
 natToInt (Suc n) = 1 + natToInt n
 
 natToIntList :: [Nat] -> [Int]
-natToIntList [] = []
-natToIntList (x : xs) = natToInt x : natToIntList xs
+natToIntList = map natToInt
 
 inttonat :: Int -> Nat
 inttonat 0 = Z
@@ -40,3 +39,7 @@ fibonacciList :: Nat -> [Nat]
 fibonacciList Z = [Z]
 fibonacciList (Suc Z) = [Z, Suc Z]
 fibonacciList (Suc (Suc n)) = addLista (somar (fibonacci n) (fibonacci (Suc n))) (fibonacciList (Suc n))
+
+-- fibonacci 5 = [0, 1, 1, 2, 3]
+-- use natToIntList to convert to Int
+-- natToIntList (fibonacciList inttonat n)

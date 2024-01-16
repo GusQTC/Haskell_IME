@@ -1,3 +1,5 @@
+{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+{-# HLINT ignore "Use even" #-}
 import Control.Monad.Error.Class (Error)
 import Distribution.Compat.Lens (_1)
 import Distribution.Simple.Test (test)

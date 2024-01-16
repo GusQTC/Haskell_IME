@@ -1,4 +1,8 @@
 ------  1,1
+{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+{-# HLINT ignore "Use camelCase" #-}
+{-# HLINT ignore "Redundant if" #-}
+{-# HLINT ignore "Use even" #-}
 list_a = [x | x <- [0, 1 .. 100], x < 51 && x `mod` 5 == 0]
 
 vowels = ['a', 'e', 'i', 'o', 'u']
@@ -11,7 +15,11 @@ list_c = [x | x <- [0, 1 .. 100], x `notElem` restrict, x < 51]
 
 list_d = [(x, y) | x <- [0, 1 .. 8], y <- ['a' .. 'h']]
 
-list_e = [(x, y) | x <- [0, 1 .. 8], y <- ['a' .. 'h'], x `mod` 2 == 0, y `elem` vowels] -- ERRO NO TEXTO
+list_e = [(x, y) |
+            x <- [0, 1 .. 8],
+            x `mod` 2 == 0,
+            y <- ['a' .. 'h'],
+            y `elem` vowels] -- ERRO NO TEXTO
 
 -- 1.2
 
