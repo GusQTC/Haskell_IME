@@ -25,32 +25,14 @@ checaFim x = case x of
   _ -> 31
 
 prox :: Mes -> Mes
-prox x = case x of
-  Janeiro -> Fevereiro
-  Fevereiro -> Marco
-  Marco -> Abril
-  Abril -> Maio
-  Maio -> Junho
-  Junho -> Julho
-  Julho -> Agosto
-  Agosto -> Setembro
-  Setembro -> Outubro
-  Outubro -> Novembro
-  Novembro -> Dezembro
-  Dezembro -> Janeiro
+prox = succ
 
 estacao :: Mes -> String
 estacao x = case x of
-  Janeiro -> "Verao"
-  Fevereiro -> "Verao"
-  Marco -> "Verao"
-  Abril -> "Outono"
-  Maio -> "Outono"
-  Junho -> "Outono"
-  Julho -> "Inverno"
-  Agosto -> "Inverno"
-  Setembro -> "Inverno"
-  _ -> "Primavera"
+  x | x <= Marco -> "Verao"
+  x | x >= Abril && x <= Junho -> "Outono"
+  x | x >= Julho && x <= Setembro -> "Inverno"
+  _ -> "Primavera" -- outubro, novembro, dezembro
 
 -- 2.2
 
@@ -67,4 +49,3 @@ encriptar (Cifrado x) = Erro "Mensagem ja cifrada"
 desencriptar :: Cripto -> Cripto
 desencriptar (Cifrado x) = Mensagem ([pred y | y <- x])
 desencriptar (Mensagem x) = Erro "Mensagem nao cifrada"
-
