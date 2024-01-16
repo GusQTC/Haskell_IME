@@ -24,7 +24,7 @@ string_vetor :: String -> [Char]
 string_vetor [] = []
 string_vetor (x : xs) = reverse (x : xs)
 
-head :: [a] -> a
+head :: [a] -> a   -- NEEDS TO COMPOSE ANOTHER FUNCTION
 head [] = error "Lista vazia"
 head (x : xs) = x
 
