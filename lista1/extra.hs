@@ -43,3 +43,4 @@ fibonacciList (Suc (Suc n)) = addLista (somar (fibonacci n) (fibonacci (Suc n)))
 -- fibonacci 5 = [0, 1, 1, 2, 3]
 -- use natToIntList to convert to Int
 -- natToIntList (fibonacciList inttonat n)
+-- 36 and over is stack overflow

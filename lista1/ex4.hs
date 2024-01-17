@@ -1,8 +1,6 @@
 {-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+
 {-# HLINT ignore "Use even" #-}
-import Control.Monad.Error.Class (Error)
-import Distribution.Compat.Lens (_1)
-import Distribution.Simple.Test (test)
 
 ----- 4.1
 
@@ -34,9 +32,32 @@ instance ParImpar Bool where
 
 ---------------------- 4.3
 
+{-
+Crie o tipo TipoProduto que possui os values constructors Escritorio , Informatica , Livro , Filme e Total .
+O tipo Produto possui um value constructor - de mesmo nome - e os campos valor ( Double ), tp ( TipoProduto
+) e um value constructor Nada , que representa a ausˆencia de um Produto .
+
+Deseja-se calcular o valor total de uma compra, de modo a n˜ao ter nenhuma convers˜ao para inteiro e de forma
+combin´avel. Crie uma instˆancia de semigrupo e monoide para Produto , de modo que o retorno sempre tenha
+Total no campo tp e a soma dos dois produtos m valor . Explique como seria o exerc´ıcio sem o uso de monoides.
+Qual(is) seria(m) a(s) diferen¸ca(s)?
+-}
+
 data TipoProduto = Escritorio | Informatica | Livro | Filme | Total deriving (Show)
 
 data Produto = Produto {valor_prod :: Double, tp :: TipoProduto} | Nada deriving (Show)
+
+class Semigrupo a where
+  totais :: a -> Produto -> Produto
+
+instance Semigrupo Produto where
+  totais (Produto a _) (Produto b _) = Produto (a + b) Total
+  totais (Produto a _) Nada = Produto a Total
+  totais Nada (Produto b _) = Produto b Total
+  totais Nada Nada = Nada
+
+-- example produto
+produtos = [Produto 10.0 Livro, Produto 20.0 Escritorio, Produto 30.0 Filme, Produto 40.0 Informatica]
 
 --------------------------- 4.4
 
