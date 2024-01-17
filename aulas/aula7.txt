@@ -1,0 +1,61 @@
+lista endocategoria e funcao pura
+
+
+funtor aplicativo = pure e <*>
+
+funtor que recebe um funtor e retorna a funcao aplicada
+
+
+monada e um monoide da categoria dos endofuntores
+
+dois axiomas
+
+-> return e join
+
+return :: Monad m => a -> m a
+
+Monada IO é impureza
+
+pure :: Applicative f => a -> f a
+
+
+join :: Monad m => m (m a) -> m a
+
+<*> :: Applicative f => f (a -> b) -> f a -> f b
+passa pra frente o valor operado dentro do contexto
+
+f e m são contextos que vao representar computações
+
+monada encapsula os efeitos colaterais fora do haskell
+
+
+bind >> :: M a -> (a -> m b) -> m b
+
+
+pra ser funtor aplicativo tem que ser funtor
+pra ser monada tem que ser funtor aplicativo
+
+just 10 >>= (\x -> return (x+1))
+
+pipe 
+|> 
+
+
+funtor so pode ter um type parameter
+
+data Talvez a = Nada | Apenas a deriving (Show)
+
+instance Functor Talvez where
+    fmap f Nada = Nada
+    fmap f (Apenas a) = Apenas (f a)
+
+
+instance Applicative Talvez where
+    pure = Apenas
+    (Apenas f) <*> (Apenas a) = Apenas (f a)
+    _ = Nada
+
+instance Monad Talvez where
+    return = Apenas
+    Nada >>= f = Nada
+    (Apenas a) >>= f = f a
