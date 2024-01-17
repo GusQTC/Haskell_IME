@@ -15,12 +15,6 @@ list_c = [x | x <- [0, 1 .. 100], x `notElem` restrict, x < 51]
 
 list_d = [(x, y) | x <- [0, 1 .. 8], y <- ['a' .. 'h']]
 
-list_e = [(x, y) |
-            x <- [0, 1 .. 8],
-            x `mod` 2 == 0,
-            y <- ['a' .. 'h'],
-            y `elem` vowels] -- ERRO NO TEXTO
-
 -- 1.2
 
 string_par :: String -> Bool

@@ -25,7 +25,7 @@ checaFim x = case x of
   _ -> 31
 
 prox :: Mes -> Mes
-prox = succ
+prox x = if x == Dezembro then Janeiro else succ x
 
 estacao :: Mes -> String
 estacao x = case x of
