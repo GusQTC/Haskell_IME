@@ -60,7 +60,13 @@ instance Semigrupo Produto where
 produtos = [Produto 10.0 Livro, Produto 20.0 Escritorio, Produto 30.0 Filme, Produto 40.0 Informatica]
 
 {--
-Sem o uso de monoides, a lógica de combinação de produtos teria que ser tratada manualmente, o que geralmente resultaria em código mais extenso e menos expressivo. No caso específico do cálculo do valor total de uma compra, a abordagem sem monoides envolveria a verificação explícita de Nada e a soma dos valores. Sem o uso de monoides, a lógica de combinação fica mais explícita, e você precisa criar funções específicas para a combinação e identidade, que são automaticamente tratadas pelas instâncias de monoides. O uso de monoides simplifica o código, tornando-o mais conciso e abstrato, facilitando a composição de valores e reduzindo a necessidade de tratamento manual de casos especiais.
+Sem o uso de monoides, a lógica de combinação de produtos teria que ser tratada manualmente, o que geralmente 
+resultaria em código mais extenso e menos expressivo. No caso específico do cálculo do valor total de uma compra,
+a abordagem sem monoides envolveria a verificação explícita de Nada e a soma dos valores. 
+Sem o uso de monoides, a lógica de combinação fica mais explícita, e você precisa criar funções 
+específicas para a combinação e identidade, que são automaticamente tratadas pelas instâncias de 
+monoides. O uso de monoides simplifica o código, tornando-o mais conciso e abstrato, facilitando a 
+composição de valores e reduzindo a necessidade de tratamento manual de casos especiais.
 -}
 --------------------------- 4.4
 
