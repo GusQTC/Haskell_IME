@@ -13,9 +13,8 @@ instance Applicative Caixa where
     _ <*> _ = error "Invalid application"
 
 instance Monad Caixa where
-    return a = Um a
+    return = Um
     -- return = pure ? 
-    (>>=) ::  m a -> (a -> m b) -> m b
     (Um a) >>= f = f a
     (Dois a b) >>= f = case f a of 
         Um x -> f b
