@@ -16,17 +16,22 @@ reverseWord = do
 
 calculateEquation :: IO ()
 calculateEquation = do
-        print "Digite a variavel x"
-        x <- getLine
-        print "Digite a variavel"
-        print (read x * read x - 1)
+        print "Digite a variavel b para elevar ao quadrado"
+        b <- getLine
+        print "Digite a variavel a"
+        a <- getLine
+        print "Digite a variavel c"
+        c <- getLine
+        print (read b * read b - 4 * read a * read c :: Int)
 
 createOutputFile :: IO ()
 createOutputFile = do
         print "Digite o tamanho do arquivo: "
         size <- getLine
-        let output = read size * 1024
-        writeFile "output.txt" (show output)
+        numLines <- readIO size
+        
+        lines <- replicateM numLines getLine
+        writeFile "output.txt" (unlines lines)
         print "Arquivo output.txt criado com sucesso"
 
 readInputFile :: IO [String]
@@ -42,8 +47,9 @@ writeMaxToFile list = do
         
         writeFile "maximum.txt" (show max)
 
-mainProgram :: IO ()
-mainProgram = do
+main :: IO ()
+main = do
+        evenNumber
         reverseWord
         calculateEquation
         createOutputFile
