@@ -17,8 +17,8 @@ somar :: Nat -> Nat -> Nat
 somar x Z = x
 somar x (Suc n) = Suc (somar x n)
 
-addLista :: Nat -> [Nat] -> [Nat]
-addLista n [] = [n]
+addLista :: Nat -> [Nat] -> [Nat] -- defini funcao
+addLista n [] = [n] -- regra da funcao para n e vazio, para implementar
 addLista n (x : xs) = (x : xs) ++ [n]
 
 mult :: Nat -> Nat -> Nat

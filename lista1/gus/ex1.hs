@@ -13,6 +13,7 @@ restrict = [2, 7, 13, 35, 42]
 
 list_c = [x | x <- [0, 1 .. 100], x `notElem` restrict, x < 51]
 
+list_d :: [(Integer, Char)]
 list_d = [(x, y) | x <- [0, 1 .. 8], y <- ['a' .. 'h']]
 
 -- 1.2
